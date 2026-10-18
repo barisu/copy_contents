@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Article Copy</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <span class="app-title">Article Copy</span>
+      </div>
+      <div class="shortcut-badge" title="ショートカットキー">
+        <kbd>Alt</kbd>+<kbd>C</kbd>
+      </div>
+    </header>
+
+    <!-- ローディング状態 -->
+    <div id="loading" class="state-container">
+      <div class="spinner"></div>
+      <p class="state-text">記事を解析中...</p>
+    </div>
+
+    <!-- エラー状態 -->
+    <div id="error-state" class="state-container hidden">
+      <div class="error-icon">⚠️</div>
+      <p id="error-message" class="state-text">記事を検出できませんでした</p>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main id="content" class="main-content hidden">
+      <!-- 記事情報カード -->
+      <section class="card article-meta">
+        <h1 id="article-title" class="title" title=""></h1>
+        <div class="meta-row">
+          <span id="site-name" class="meta-item site"></span>
+          <span class="meta-separator">•</span>
+          <span id="char-count" class="meta-item">0 文字</span>
+          <span class="meta-separator">•</span>
+          <span id="read-time" class="meta-item">約 0 分</span>
+        </div>
+      </section>
+
+      <!-- オプショントグル -->
+      <section class="options-container">
+        <label class="toggle-label">
+          <input type="checkbox" id="toggle-title" checked>
+          <span class="toggle-text">タイトルを含める</span>
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="toggle-url" checked>
+          <span class="toggle-text">URLを含める</span>
+        </label>
+      </section>
+
+      <!-- アクションボタン -->
+      <button id="copy-btn" class="btn-primary" type="button">
+        <span class="btn-icon copy-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+          </svg>
+        </span>
+        <span class="btn-icon check-icon hidden">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </span>
+        <span id="btn-text">Markdownをコピー</span>
+      </button>
+
+      <!-- プレビュー -->
+      <details class="preview-details">
+        <summary class="preview-summary">プレビューを表示</summary>
+        <div class="preview-box">
+          <pre><code id="preview-text"></code></pre>
+        </div>
+      </details>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <span>Powered by Mozilla Readability (No external dependencies)</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

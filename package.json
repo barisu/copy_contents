@@ -1,0 +1,13 @@
+{
+  "name": "content_copy_extension",
+  "version": "1.0.0",
+  "description": "Mozilla Readabilityを利用して、ネット記事の本文をMarkdown形式でサクッとコピペするChrome拡張機能 (ゼロ依存・Vanilla JS)",
+  "keywords": [
+    "chrome-extension",
+    "readability",
+    "markdown",
+    "clipboard"
+  ],
+  "author": "",
+  "license": "MIT"
+}
