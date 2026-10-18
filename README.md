@@ -35,3 +35,15 @@ Mozilla の **Readability** を利用して、閲覧中のネット記事から�
 
 ### ショートカットキーの変更
 - ショートカットキー（デフォルト: `Alt + C`）を変更したい場合は、`chrome://extensions/shortcuts` にアクセスして自由に変更できます。
+
+---
+
+## 📄 ライセンス & クレジット
+
+本プロジェクトは [MIT License](LICENSE) の下で公開されています。
+
+### サードパーティライセンス
+- **Readability.js** (`lib/Readability.js`):
+  - Copyright (c) 2010 Arc90 Inc / Mozilla Foundation
+  - Licensed under the Apache License, Version 2.0.
+  - ライセンス全文は [lib/LICENSE-Readability.txt](lib/LICENSE-Readability.txt) をご覧ください。
